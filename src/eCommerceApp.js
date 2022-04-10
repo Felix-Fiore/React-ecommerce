@@ -1,9 +1,16 @@
+import { Routes, Route, Link } from 'react-router-dom';
+import { CartScreen } from './screens/CartScreen';
 import { HomeScreen } from './screens/HomeScreen';
+import { LoginScreen } from './screens/LoginScreen';
 
 export const ECommerceApp = () => {
     return (
         <div>
-            <HomeScreen />
+            <Routes>
+                <Route path="/" element={<HomeScreen />} />
+                <Route path="/cart" element={<CartScreen />} />
+                <Route path="/login" element={<LoginScreen />} />
+            </Routes>
         </div>
     );
 };

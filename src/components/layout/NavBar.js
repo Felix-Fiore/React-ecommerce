@@ -3,11 +3,7 @@ export const NavBar = () => {
         <div>
             <ul className="nav nav-pills bg-dark p-3  d-flex justify-content-end">
                 <li className="nav-item">
-                    <a
-                        className="nav-link active"
-                        aria-current="page"
-                        href="/home"
-                    >
+                    <a className="nav-link active" aria-current="page" href="/">
                         Home
                     </a>
                 </li>
