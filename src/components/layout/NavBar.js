@@ -1,21 +1,23 @@
+import { Link } from 'react-router-dom';
+
 export const NavBar = () => {
     return (
         <div>
             <ul className="nav nav-pills bg-dark p-3  d-flex justify-content-end">
                 <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="/">
+                    <Link className="nav-link active" to="/">
                         Home
-                    </a>
+                    </Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="/cart">
+                    <Link className="nav-link" to="/cart">
                         Carrito
-                    </a>
+                    </Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="/login">
+                    <Link className="nav-link" to="/login">
                         Login
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </div>
