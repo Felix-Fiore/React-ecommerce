@@ -1,25 +1,43 @@
 import carteraTarjeta from '../../assets/carteraTarjeta.jpg';
+import { Product } from '../Product';
 
 export const Products = () => {
+    //const { name, description, price } = Product;
+
+    const products = [
+        {
+            image: carteraTarjeta,
+            name: 'Cartera 1',
+            description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod.',
+            price: '$50.00',
+        },
+        {
+            image: carteraTarjeta,
+            name: 'Cartera 2',
+            description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod.',
+            price: '$80.00',
+        },
+        {
+            image: carteraTarjeta,
+            name: 'Cartera 3',
+            description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod.',
+            price: '$100.00',
+        },
+    ];
+
     return (
-        <div className="container">
-            <div>
-                <div className="card" style={{ width: 250 }}>
-                    <img
-                        src={carteraTarjeta}
-                        className="card-img-top"
-                        alt="Producto"
-                    ></img>
-                    <div className="card-body text-center">
-                        <h5 className="card-title">Nombre Producto</h5>
-                        <p className="card-text">Descripcion Producto</p>
-                        <span>Precio producto</span>
-                        <a href="/nada" className="btn btn-primary">
-                            Más Información
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <>
+            {products.map(({ name, description, price }) => (
+                <Product
+                    key={name}
+                    name={name}
+                    description={description}
+                    price={price}
+                />
+            ))}
+        </>
     );
 };

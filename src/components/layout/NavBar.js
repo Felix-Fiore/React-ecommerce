@@ -19,6 +19,7 @@ export const NavBar = () => {
                         Login
                     </Link>
                 </li>
+                <li className="userName">user</li>
             </ul>
         </div>
     );

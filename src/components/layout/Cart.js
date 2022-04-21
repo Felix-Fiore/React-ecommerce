@@ -1,8 +1,12 @@
+import { Products } from './Products';
+
 export const Cart = () => {
+    const { name, price } = Products;
+
     return (
         <div className="contenedor">
             <div className="items-section">
-                <h4>Cart (0)</h4>
+                <h4>{name} (0)</h4>
                 <div className="item">
                     <p>item Name</p>
                     <div className="counter-buttons">
@@ -10,7 +14,7 @@ export const Cart = () => {
                         <p className="counter-value">0</p>
                         <button className="counter-button">+</button>
                     </div>
-                    <p>$0.00</p>
+                    <p>{price}</p>
                 </div>
                 <div className="payment-button">
                     <button className="btn-primary">Continuar Compra</button>
