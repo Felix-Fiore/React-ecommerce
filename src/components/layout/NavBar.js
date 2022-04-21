@@ -1,6 +1,12 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../context/UserContext';
 
 export const NavBar = () => {
+    const { user } = useContext(UserContext);
+
+    const { name } = user;
+
     return (
         <div>
             <ul className="nav nav-pills bg-dark p-3  d-flex justify-content-end">
@@ -19,7 +25,7 @@ export const NavBar = () => {
                         Login
                     </Link>
                 </li>
-                <li className="userName">user</li>
+                <li className="userName">{name}</li>
             </ul>
         </div>
     );

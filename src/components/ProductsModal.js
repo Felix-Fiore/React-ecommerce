@@ -2,6 +2,8 @@ import { Modal, Button } from 'react-bootstrap';
 
 export const ProductsModal = ({
     title,
+    image,
+    price,
     description,
     buttonCardText,
     callback,
@@ -20,7 +22,33 @@ export const ProductsModal = ({
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <p>{description}</p>
+                <div
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}
+                >
+                    <img
+                        style={{
+                            width: 400,
+                        }}
+                        src={image}
+                        alt="product"
+                    />
+                </div>
+                <div
+                    style={{
+                        marginTop: 30,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}
+                >
+                    <p>{description}</p>
+                    <p>{price}</p>
+                </div>
             </Modal.Body>
             <Modal.Footer>
                 <Button onClick={callback}>{buttonCardText}</Button>

@@ -1,8 +1,11 @@
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
     const { setUser } = useContext(UserContext);
+
+    let navigate = useNavigate();
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -12,6 +15,8 @@ export const Login = () => {
             email: 'correo@correo.com',
             password: '123456',
         });
+
+        navigate('/', { replace: true });
     };
 
     return (
@@ -43,7 +48,7 @@ export const Login = () => {
                         <div className="form-group">
                             <button
                                 className="btn btn-primary"
-                                //onClick={handleLogin}
+                                onClick={handleLogin}
                             >
                                 Login
                             </button>

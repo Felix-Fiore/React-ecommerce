@@ -1,4 +1,3 @@
-import carteraTarjeta from '../assets/carteraTarjeta.jpg';
 import { Card, Button } from 'react-bootstrap';
 import { ModalContext } from '../context/ModalContext';
 import { useContext } from 'react';
@@ -6,18 +5,21 @@ import { useContext } from 'react';
 export const Product = ({ image, name, description, price }) => {
     const {
         handleOpenModal,
-        handleCloseModal,
         setTitle,
+        setImage,
         setDescription,
+        setPrice,
         setCallback,
         setButtonCardText,
     } = useContext(ModalContext);
 
     const handleClick = () => {
         setTitle(name);
+        setImage(image);
         setDescription(description);
-        setCallback(handleCloseModal);
-        setButtonCardText('Aceptar');
+        setPrice(price);
+        setCallback();
+        setButtonCardText('Agregar al carrito');
         handleOpenModal();
     };
 
@@ -28,7 +30,7 @@ export const Product = ({ image, name, description, price }) => {
                     width: '20rem',
                 }}
             >
-                <Card.Img variant="top" src={carteraTarjeta} />
+                <Card.Img variant="top" src={image} />
                 <Card.Body
                     style={{
                         display: 'flex',

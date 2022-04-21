@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 import { ProductsModal } from '../components/ProductsModal';
 
 export const ModalContext = createContext({
@@ -7,14 +7,20 @@ export const ModalContext = createContext({
     handleCloseModal: () => {},
     setTitle: () => {},
     setDescription: () => {},
+    setPrice: () => {},
     setButtonCardText: () => {},
     setCallback: () => {},
+    setImage: () => {},
 });
 
 export const ModalContextProvider = ({ children }) => {
     const [title, setTitle] = useState('');
 
+    const [image, setImage] = useState();
+
     const [description, setDescription] = useState('');
+
+    const [price, setPrice] = useState('');
 
     const [buttonCardText, setButtonCardText] = useState('');
 
@@ -25,10 +31,6 @@ export const ModalContextProvider = ({ children }) => {
     const handleOpenModal = () => {
         setShowModal(true);
     };
-
-    useEffect(() => {
-        console.log(showModal);
-    }, [showModal]);
 
     const handleCloseModal = () => {
         setShowModal(false);
@@ -42,13 +44,17 @@ export const ModalContextProvider = ({ children }) => {
                 handleCloseModal,
                 setTitle,
                 setDescription,
+                setPrice,
                 setButtonCardText,
                 setCallback,
+                setImage,
             }}
         >
             <ProductsModal
                 title={title}
+                image={image}
                 description={description}
+                price={price}
                 callback={callback}
                 buttonCardText={buttonCardText}
                 show={showModal}
